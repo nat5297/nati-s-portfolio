@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #00ffff;
+      cursor: pointer;
+    }
+
+    .weather {
+      margin-top: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 15px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌤️ Weather Checker</h1>
+  <div>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Check</button>
+  </div>
+
+  <div class="weather" id="weatherBox" style="display: none;">
+    <h2 id="cityName"></h2>
+    <p><strong>Temperature:</strong> <span id="temp"></span>°C</p>
+    <p><strong>Condition:</strong> <span id="condition"></span></p>
+    <p><strong>Wind:</strong> <span id="wind"></span> km/h</p>
+  </div>
+
+  <script>
+    const API_KEY = 'YOUR_API_KEY_HERE'; // Paste your key here
+
+    async function getWeather() {
+      const city = document.getElementById('cityInput').value;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.cod === 200) {
+          document.getElementById('cityName').innerText = data.name;
+          document.getElementById('temp').innerText = data.main.temp;
+          document.getElementById('condition').innerText = data.weather[0].description;
+          document.getElementById('wind').innerText = data.wind.speed;
+          document.getElementById('weatherBox').style.display = 'block';
+        } else {
+          alert('City not found. Try again.');
+        }
+      } catch (error) {
+        alert('Error fetching weather data.');
+      }
+    }
+  </script>
+</body>
+</html>

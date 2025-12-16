@@ -1,0 +1,77 @@
+Nati's Portfolio Web Code
+ Complete HTML + CSS Portfolio Code
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nati's Portfolio</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: linear-gradient(to right, #f0f0f0,
+ #e0e0ff); padding: 40px; }
+    .container { max-width: 800px; margin: auto; text-align: center; }
+    .card { background-color: white; padding: 30px; border-radius: 20px; box-shadow: 0 8px 15px
+ rgba(0, 0, 0, 0.1); margin-bottom: 40px; }
+    .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+ margin-bottom: 20px; }
+    h1 { font-size: 26px; margin-bottom: 10px; }
+    .title { font-size: 18px; color: gray; margin-bottom: 10px; }
+    .button { display: inline-block; margin-top: 15px; padding: 10px 20px; background-color:
+ #4a69bd; color: white; text-decoration: none; border-radius: 25px; transition: background 0.3s; }
+    .button:hover { background-color: #1e3799; }
+    .skills h2 { font-size: 22px; color: #4a69bd; margin-bottom: 20px; }
+    .skill { text-align: left; margin: 10px 0; }
+    .skill i { color: #4a69bd; margin-right: 8px; }
+    .progress { background-color: #e0e0e0; border-radius: 20px; overflow: hidden; height: 20px;
+ margin-top: 5px; }
+    .progress-bar { height: 100%; background-color: #4a69bd; text-align: right; padding-right:
+ 5px; color: white; font-size: 12px; border-radius: 20px; }
+    .projects h2 { font-size: 22px; color: #4a69bd; margin: 30px 0 20px; }
+    .project-card { text-align: left; background: #f9f9ff; padding: 20px; border-radius: 15px;
+ margin-bottom: 20px; }
+    .project-card h3 { color: #333; }
+    .project-card p { font-size: 14px; margin: 10px 0; }
+    .project-card a { text-decoration: none; color: white; background: #4a69bd; padding: 8px 15px;
+ border-radius: 20px; font-size: 13px; }
+    .project-card a:hover { background-color: #1e3799; }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+    <div class="card">
+      <img src="nati.jpg" alt="Nati's Photo" class="profile-img">
+      <h1>Nati</h1>
+      <p class="title">Web & Android Developer</p>
+      <p>Adama Science and Technology University SECOND YEAR STUDENT </p>
+      <a href="mailto:nati@example.com" class="button">Contact Me</a>
+    </div>
+    <div class="card skills">
+Nati's Portfolio Web Code
+      <h2><i class="fas fa-code"></i> My Skills</h2>
+      <div class="skill"><i class="fab fa-html5"></i> HTML<div class="progress"><div
+ class="progress-bar" style="width: 90%;">90%</div></div></div>
+      <div class="skill"><i class="fab fa-css3-alt"></i> CSS<div class="progress"><div
+ class="progress-bar" style="width: 85%;">85%</div></div></div>
+      <div class="skill"><i class="fab fa-js"></i> JavaScript<div class="progress"><div
+ class="progress-bar" style="width: 60%;">60%</div></div></div>
+      <div class="skill"><i class="fab fa-android"></i> Android (Kotlin/Java)<div
+ class="progress"><div class="progress-bar" style="width: 50%;">50%</div></div></div>
+    </div>
+    <div class="card projects">
+      <h2><i class="fas fa-laptop-code"></i> My Projects</h2>
+      <div class="project-card">
+        <h3>Personal Portfolio Website</h3>
+        <p>A simple and responsive portfolio built using HTML & CSS.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Basic Android App</h3>
+        <p>My first Android app created with Kotlin, showing a calculator layout.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </div>
+ </body>
+ </html>

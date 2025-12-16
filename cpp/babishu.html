@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Form Input Types</title>
+  <!-- CSS Declarations to make style for the form -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    /* Navigation bar */
+    header {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    nav {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+    }
+
+    nav a:hover {
+      background-color: darkorange;
+      border-radius: 5px;
+    }
+
+    /* Form styling */
+    h1 {
+      text-align: center;
+      background-color: darkorange;
+      color: gainsboro;
+      padding: 10px;
+      margin-top: 0;
+    }
+
+    fieldset {
+      background: white;
+      width: 60%;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      border: 2px solid chartreuse;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"],
+    input[type="color"],
+    input[type="range"],
+    input[type="file"],
+    input[type="image"] {
+      width: auto;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+      width: auto;
+      padding: 10px 15px;
+      margin-right: 5px;
+      background-color: darkorange;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover {
+      background-color: #e69500;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <h1>HTML Form Example</h1>
+  <fieldset>
+    <legend>Fill the Form</legend>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <label for="gender">Gender:</label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+
+    <label for="hobbies">Hobbies:</label>
+    <input type="checkbox" name="hobbies" value="sports"> Sports
+    <input type="checkbox" name="hobbies" value="reading"> Reading
+    <input type="checkbox" name="hobbies" value="travel"> Travel
+
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+      <option value="ethiopia">Ethiopia</option>
+      <option value="brazil">Brazil</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="message">Message:</label>
+    <textarea id="message" rows="4"></textarea>
+
+    <br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    <input type="button" value="Click Me">
+  </fieldset>
+
+  <footer>
+    <p>&copy; 2025 My Form Project | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!-- Second Website: Random Quote Generator -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Vibes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6dd5ed, #2193b0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .quote-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .quote {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #2193b0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #1b7aa3;
+    }
+  </style>
+</head>
+<body>
+  <div class="quote-box">
+    <div class="quote" id="quote">Click the button to get inspired!</div>
+    <button class="btn" onclick="generateQuote()">New Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Believe in yourself and all that you are.",
+      "Push yourself, because no one else is going to do it for you.",
+      "You are stronger than you think.",
+      "Great things never come from comfort zones.",
+      "Success doesn’t come to you. You go to it."
+    ];
+
+    function generateQuote() {
+      const random = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").innerText = quotes[random];
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nati Derese | Web Developer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { background: #0f172a; color: #e5e7eb; }
+
+    header { padding: 50px 20px; text-align: center; position: sticky; top: 0; background: #0f172a; z-index: 1000; }
+    header h1 { font-size: 3rem; transition: color 0.3s; }
+    header p { margin-top: 10px; color: #94a3b8; }
+    nav { margin-top: 20px; }
+    nav a { margin: 0 15px; color: #38bdf8; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #22d3ee; }
+
+    section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    h2 { margin-bottom: 20px; color: #38bdf8; border-bottom: 2px solid #38bdf8; display: inline-block; }
+    .card { background: #020617; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+
+    ul li { margin-left: 20px; margin-bottom: 10px; }
+
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+    footer { text-align: center; padding: 30px; color: #94a3b8; }
+
+    /* Skills progress bars */
+    .skill { margin-bottom: 15px; }
+    .skill-name { margin-bottom: 5px; }
+    .progress { background: #1e293b; border-radius: 10px; overflow: hidden; height: 15px; }
+    .progress-bar { height: 15px; background: #38bdf8; width: 0; transition: width 1.5s; }
+
+    /* Dark/light mode */
+    .mode-toggle { position: fixed; top: 20px; right: 20px; background: #38bdf8; color: #0f172a; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<button class="mode-toggle" onclick="toggleMode()">Light Mode</button>
+
+<header>
+  <h1>Nati Derese</h1>
+  <p>Front-End Web Developer | React Learner</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am a university student passionate about web development. I am focused on front-end technologies like HTML, CSS, JavaScript, and React. My goal is to become a professional web developer, build amazing projects, and work remotely.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <div class="skill">
+      <div class="skill-name">HTML5</div>
+      <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">CSS3</div>
+      <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">React</div>
+      <div class="progress"><div class="progress-bar" style="width:50%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Git & GitHub</div>
+      <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>My personal portfolio built with HTML, CSS, and JS. Includes interactive elements and responsive design.</p>
+    </div>
+    <div class="card">
+      <h3>JavaScript Mini Projects</h3>
+      <p>Small projects to practice DOM manipulation, event handling, and animations.</p>
+    </div>
+    <div class="card">
+      <h3>React Todo App</h3>
+      <p>A simple todo app built in React demonstrating state management and component reuse.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: yourname@email.com</p>
+    <p>GitHub: <a href="#">github.com/yourusername</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Nati Derese</p>
+</footer>
+
+<script>
+  // Dark/Light Mode Toggle
+  function toggleMode() {
+    document.body.classList.toggle('light-mode');
+    if(document.body.classList.contains('light-mode')) {
+      document.body.style.background = '#f3f4f6';
+      document.body.style.color = '#0f172a';
+    } else {
+      document.body.style.background = '#0f172a';
+      document.body.style.color = '#e5e7eb';
+    }
+  }
+
+  // Animate skill bars on scroll
+  const skillBars = document.querySelectorAll('.progress-bar');
+  const skillsSection = document.getElementById('skills');
+
+  window.addEventListener('scroll', () => {
+    const sectionPos = skillsSection.getBoundingClientRect().top;
+    const screenPos = window.innerHeight / 1.2;
+    if(sectionPos < screenPos) {
+      skillBars.forEach(bar => {
+        bar.style.width = bar.style.width;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
